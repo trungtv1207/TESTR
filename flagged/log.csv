@@ -1,0 +1,4 @@
+Age,Age,Age,Age,output 0,output 1,flag,username,timestamp
+,,,0,,,,,2023-12-19 15:51:29.710299
+ICDAR15,input,"{""path"":""flagged/Input Image/b63c6442ec3fa19045b0/img_7.jpg"",""url"":""http://127.0.0.1:7860/file=/tmp/gradio/69ca565ceaca05eecaa73e4122e9a0ef2844b6fb/img_7.jpg"",""size"":101148,""orig_name"":""img_7.jpg"",""mime_type"":""""}",0.3,0.3,,"{""path"":""flagged/Output Image/0b884dc6d041498d1c14/img_7.jpeg"",""url"":null,""size"":null,""orig_name"":""img_7.jpeg"",""mime_type"":null}",,,2023-12-19 16:37:38.648385
+"{""path"":""flagged/Input Image/11f97ff148f501769f2c/img_3.jpg"",""url"":""http://127.0.0.1:7860/file=/tmp/gradio/a4fa398ee6546e04c375495692421ec05808c919/img_3.jpg"",""size"":53995,""orig_name"":""img_3.jpg"",""mime_type"":""""}",ICDAR15,input,0.3,0.3,,"{""path"":""flagged/Output Image/21b420e29734ed647fa5/img_3.jpeg"",""url"":null,""size"":null,""orig_name"":""img_3.jpeg"",""mime_type"":null}",,,2023-12-19 16:41:45.819829

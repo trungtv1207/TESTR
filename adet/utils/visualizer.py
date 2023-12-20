@@ -25,7 +25,7 @@ class TextVisualizer(Visualizer):
         scores = predictions.scores.tolist()
         recs = predictions.recs
 
-        self.overlay_instances(ctrl_pnts, recs, scores)
+        self.results = self.overlay_instances(ctrl_pnts, recs, scores)
 
         return self.output
 
@@ -78,6 +78,7 @@ class TextVisualizer(Visualizer):
         return s
 
     def overlay_instances(self, ctrl_pnts, recs, scores, alpha=0.5):
+        results = {}
         color = (0.1, 0.2, 0.5)
 
         for ctrl_pnt, rec, score in zip(ctrl_pnts, recs, scores):
@@ -86,6 +87,7 @@ class TextVisualizer(Visualizer):
 
             # draw text in the top left corner
             text = self._decode_recognition(rec)
+            text_ = text
             text = "{:.3f}: {}".format(score, text)
             lighter_color = self._change_color_brightness(color, brightness_factor=0.7)
             text_pos = polygon[0]
@@ -100,6 +102,13 @@ class TextVisualizer(Visualizer):
                 font_size=font_size,
                 draw_chinese=False if self.voc_size == 96 else True
             )
+            
+            results[str(len(results))] = {
+                "text": text_,
+                "score": score,
+                "text_pos": text_pos
+            }
+        return results
     
 
     def draw_text(
