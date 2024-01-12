@@ -88,7 +88,7 @@ class TextVisualizer(Visualizer):
             # draw text in the top left corner
             text = self._decode_recognition(rec)
             text_ = text
-            text = "{:.3f}: {}".format(score, text)
+            text = "Score: {:.3f}".format(score)
             lighter_color = self._change_color_brightness(color, brightness_factor=0.7)
             text_pos = polygon[0]
             horiz_align = "left"
