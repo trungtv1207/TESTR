@@ -19,7 +19,7 @@ import gradio as gr
 def setup_cfg(config_file, opts, confidence_threshold, inference_th_test):
     # load config from file and command-line arguments
     cfg = get_cfg()
-    cfg.merge_from_file("/home/trungtv/sources/TESTR/configs/TESTR/ICDAR15/TESTR_R_50_Polygon.yaml")
+    cfg.merge_from_file("./configs/TESTR/ICDAR15/TESTR_R_50_Polygon.yaml")
     cfg.merge_from_list(opts)
     # Set score_threshold for builtin models
     cfg.MODEL.RETINANET.SCORE_THRESH_TEST = confidence_threshold
@@ -27,14 +27,14 @@ def setup_cfg(config_file, opts, confidence_threshold, inference_th_test):
     cfg.MODEL.FCOS.INFERENCE_TH_TEST = confidence_threshold
     cfg.MODEL.MEInst.INFERENCE_TH_TEST = confidence_threshold
     cfg.MODEL.PANOPTIC_FPN.COMBINE.INSTANCES_CONFIDENCE_THRESH = confidence_threshold
-    cfg.MODEL.WEIGHTS = "/home/trungtv/sources/TESTR/icdar15_testr_R_50_polygon.pth"
+    cfg.MODEL.WEIGHTS = "../weights/pretrain_testr_R_50_polygon.pth"
     cfg.MODEL.TRANSFORMER.INFERENCE_TH_TEST = inference_th_test
     cfg.freeze()
     return cfg
 
 def predict(input, config_file, input_type, confidence_threshold, inference_th_test, opts=[], progress=gr.Progress()):
     progress(0, desc="Starting...")
-    output = "/home/trungtv/sources/TESTR/datasets/demo_"
+    output = "./datasets/demo_"
     gr.Info("Starting process")
     
     if config_file != "ICDAR15":
